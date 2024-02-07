@@ -3,7 +3,8 @@ var router = express.Router();
 
 const fetch = require('node-fetch');
 
-const TMDB_API_KEY = `720fe93eb9c28d934f3bd694ce04cb5b`;
+const TMDB_API_KEY = process.env.TMDB_API_KEY;
+console.log(TMDB_API_KEY);
 
 router.get('/movies', (req, res) => {
         fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${TMDB_API_KEY}`)
